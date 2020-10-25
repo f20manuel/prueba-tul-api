@@ -48,13 +48,10 @@ class UserController extends Controller
         return response()->json(['success' => $user], 200); 
     }
 
-    public function logout(){
-        $value = $request->bearerToken();
-        $id = (new Parser())->parse($value)->getHeader('jti');
-        $token = $request->user()->tokens->find($id);
+    public function logout(Request $request){
+        $token = $request->user()->token();
         $token->revoke();
-
-        $response = 'Sesión cerrada con éxito';
-        return response()->json(['success' => $response], 200);
+        $response = ['message' => 'Sesión cerrada con éxito!'];
+        return response()->json($response, 200);
     }
 }
