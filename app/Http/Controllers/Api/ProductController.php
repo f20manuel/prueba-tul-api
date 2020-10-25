@@ -26,10 +26,9 @@ class ProductController extends Controller
                 ->get();
 
                 foreach($products as $product) {
-                    dd($product->carts->count());
                     if ($product->carts->count() > 0) {
-                        foreach($product->carts() as $cart) {
-                            $product->quantity = CartProduct::where('cart_id', $cart->id)->first()->quantity;
+                        foreach($product->carts as $cart) {
+                            $cart->quantity = CartProduct::where('cart_id', $cart->id)->first()->quantity;
                         }
                     }
                 }
