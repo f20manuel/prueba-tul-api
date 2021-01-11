@@ -1,0 +1,15 @@
+.wsme_btn {
+  display: flex;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  justify-content: center;
+  align-items: center;
+  max-width: 40px!important;
+  min-height: 40px!important;
+  background-color: #25d366;
+  border-radius: 50%;
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+}
