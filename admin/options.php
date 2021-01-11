@@ -13,6 +13,8 @@ function wsme_options_page() {
       <td><input type="tel" name="wsme_number" value="<?php echo esc_attr( get_option('wsme_number') ); ?>" placeholder="+573213211234" /></td>
       </tr>
     </table>
+
+    <!-- staging -->
     <div style="
       display: flex;
       align-items: center;
